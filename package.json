@@ -1,0 +1,23 @@
+{
+  "name": "maid-to-shine",
+  "version": "1.0.0",
+  "description": "Professional Cleaning Services Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo \"Build complete\""
+  },
+  "keywords": [
+    "cleaning",
+    "services",
+    "professional",
+    "maid",
+    "residential",
+    "commercial"
+  ],
+  "author": "Heather Rogers",
+  "license": "MIT",
+  "engines": {
+    "node": "18.x"
+  }
+}
