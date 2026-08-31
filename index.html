@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAID to SHINE - Professional Cleaning Services in St. Charles</title>
+    <title>MAID to SHINE - Professional Cleaning Services</title>
     <style>
         * {
             margin: 0;
@@ -12,25 +12,26 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #444;
-            background-color: #f9f9f9;
+            color: #333;
+            background-color: #ffffff;
         }
 
-        /* Header & Navigation */
+        /* Header */
         header {
-            background-color: #fff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background-color: #1a1a1a;
+            color: white;
+            padding: 1.5rem 2rem;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        nav {
+        .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,326 +40,241 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #2d7a4a;
             letter-spacing: -0.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         nav a {
+            color: white;
             text-decoration: none;
-            color: #444;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: opacity 0.3s;
         }
 
         nav a:hover {
-            color: #2d7a4a;
+            opacity: 0.7;
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: white;
+            padding: 6rem 2rem;
             text-align: center;
-            border-bottom: 1px solid #e0e0e0;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            color: #1a1a1a;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
             font-weight: 700;
             letter-spacing: -1px;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            color: #666;
+            font-size: 1.3rem;
             margin-bottom: 2rem;
+            opacity: 0.9;
             line-height: 1.8;
         }
 
-        .hero .cta-button {
-            background-color: #2d7a4a;
+        .cta-button {
+            display: inline-block;
+            background-color: #0066cc;
             color: white;
-            padding: 1rem 2.5rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
             font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(45, 122, 74, 0.25);
+            font-size: 1.05rem;
         }
 
-        .hero .cta-button:hover {
-            background-color: #245a38;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(45, 122, 74, 0.35);
+        .cta-button:hover {
+            background-color: #0052a3;
         }
 
-        /* Services Section */
+        /* Services */
         .services {
             max-width: 1200px;
             margin: 4rem auto;
             padding: 0 2rem;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
+        .section-title {
             font-size: 2.5rem;
-            color: #1a1a1a;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
+            text-align: center;
             font-weight: 700;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
 
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #2d7a4a;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            text-align: left;
+        .service-item {
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border-left: 4px solid #0066cc;
         }
 
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
-
-        .service-card h3 {
-            color: #2d7a4a;
-            font-size: 1.5rem;
+        .service-item h3 {
+            font-size: 1.3rem;
             margin-bottom: 1rem;
-            font-weight: 600;
+            color: #1a1a1a;
         }
 
-        .service-card p {
+        .service-item p {
             color: #666;
             line-height: 1.8;
-            font-size: 1rem;
         }
 
-        /* About Section */
-        .about {
-            background-color: white;
+        /* Pricing */
+        .pricing {
+            background-color: #f8f9fa;
             padding: 4rem 2rem;
-            margin: 3rem 0;
-            border-top: 1px solid #e0e0e0;
-            border-bottom: 1px solid #e0e0e0;
+            margin: 4rem 0;
         }
 
-        .about-content {
+        .pricing-content {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .pricing-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .about-text h2 {
-            font-size: 2rem;
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: #1a1a1a;
-            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: #0066cc;
             font-weight: 700;
+            margin-bottom: 1rem;
         }
 
-        .about-text p {
+        .price-note {
             color: #666;
-            line-height: 1.9;
+            font-size: 0.95rem;
             margin-bottom: 1.5rem;
-            font-size: 1rem;
         }
 
-        .about-features {
+        .features {
             list-style: none;
-            margin-top: 1.5rem;
+            margin-bottom: 2rem;
         }
 
-        .about-features li {
-            padding: 0.7rem 0;
-            color: #444;
-            display: flex;
-            align-items: center;
+        .features li {
+            padding: 0.5rem 0;
+            color: #666;
+            border-bottom: 1px solid #eee;
         }
 
-        .about-features li:before {
-            content: "✓";
-            color: #2d7a4a;
-            font-weight: bold;
-            margin-right: 1rem;
-            font-size: 1.3rem;
+        .features li:last-child {
+            border-bottom: none;
         }
 
-        .about-image {
-            background: linear-gradient(135deg, #2d7a4a 0%, #3d9a5a 100%);
-            height: 300px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
+        /* Booking Form */
+        .booking {
             max-width: 1200px;
             margin: 4rem auto;
             padding: 0 2rem;
         }
 
-        .testimonials h2 {
-            font-size: 2.5rem;
-            color: #1a1a1a;
-            text-align: center;
-            margin-bottom: 3rem;
-            font-weight: 700;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-top: 3px solid #2d7a4a;
-        }
-
-        .stars {
-            color: #f59e0b;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-text {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: #1a1a1a;
-            font-size: 0.95rem;
-        }
-
-        .testimonial-title {
-            color: #999;
-            font-size: 0.85rem;
-            margin-top: 0.3rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-            padding: 4rem 2rem;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .contact-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        .booking-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
-            align-items: center;
+            align-items: start;
         }
 
-        .contact h2 {
+        .booking-info h2 {
             font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .booking-info p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+        }
+
+        .contact-details div {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-label {
+            font-weight: 600;
             color: #1a1a1a;
-            margin-bottom: 2rem;
-            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
         .contact-info {
-            list-style: none;
+            color: #666;
         }
 
-        .contact-info li {
-            padding: 1rem 0;
-            font-size: 1.1rem;
-            color: #444;
-            border-bottom: 1px solid #e0e0e0;
+        /* Form */
+        .booking-form {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 4px;
         }
 
-        .contact-info li:last-child {
-            border-bottom: none;
-        }
-
-        .contact-info strong {
-            color: #2d7a4a;
-            display: block;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.3rem;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .contact-form h3 {
-            color: #1a1a1a;
+        .booking-form h3 {
             margin-bottom: 1.5rem;
-            font-weight: 600;
+            font-size: 1.3rem;
         }
 
         .form-group {
             margin-bottom: 1.5rem;
         }
 
-        .form-group label {
+        label {
             display: block;
             margin-bottom: 0.5rem;
-            color: #444;
             font-weight: 500;
-            font-size: 0.95rem;
+            color: #333;
         }
 
-        .form-group input,
-        .form-group textarea {
+        input, select, textarea {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid #ddd;
@@ -368,34 +284,38 @@
             transition: border-color 0.3s;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
+        input:focus, select:focus, textarea:focus {
             outline: none;
-            border-color: #2d7a4a;
-            box-shadow: 0 0 0 3px rgba(45, 122, 74, 0.1);
+            border-color: #0066cc;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
         }
 
-        .form-group textarea {
+        textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 100px;
         }
 
-        .submit-button {
-            background-color: #2d7a4a;
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #0066cc;
             color: white;
-            padding: 1rem 2rem;
+            padding: 1rem;
             border: none;
-            border-radius: 6px;
-            font-size: 1rem;
+            border-radius: 4px;
             font-weight: 600;
             cursor: pointer;
-            width: 100%;
-            transition: all 0.3s ease;
+            font-size: 1rem;
+            transition: background-color 0.3s;
         }
 
-        .submit-button:hover {
-            background-color: #245a38;
-            transform: translateY(-2px);
+        .submit-btn:hover {
+            background-color: #0052a3;
         }
 
         /* Footer */
@@ -404,20 +324,11 @@
             color: white;
             text-align: center;
             padding: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 0.95rem;
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
             .hero h1 {
                 font-size: 2rem;
             }
@@ -426,193 +337,225 @@
                 font-size: 1rem;
             }
 
-            .section-header h2 {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
                 font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .about-image {
-                height: 200px;
-            }
-
-            .hero .cta-button {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
+    <!-- Header -->
     <header>
-        <nav>
+        <div class="header-container">
             <div class="logo">MAID to SHINE</div>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Professional Cleaning Services You Can Trust</h1>
-            <p>Award-winning cleaning specialists serving St. Charles with exceptional attention to detail and customer satisfaction</p>
-            <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Your Free Quote</button>
+            <h1>Professional Cleaning Services</h1>
+            <p>Expert cleaning solutions for your home and business. Licensed, insured, and dedicated to your satisfaction.</p>
+            <a href="#booking" class="cta-button">Book Your Cleaning Today</a>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services -->
     <section class="services" id="services">
-        <div class="section-header">
-            <h2>Our Services</h2>
-            <p>Comprehensive cleaning solutions tailored to your home or business</p>
-        </div>
+        <h2 class="section-title">Our Services</h2>
         <div class="services-grid">
-            <div class="service-card">
+            <div class="service-item">
                 <h3>Residential Cleaning</h3>
-                <p>Weekly, bi-weekly, or monthly cleaning services designed to keep your home fresh, organized, and spotless. Our thorough approach covers every room.</p>
+                <p>Regular weekly, bi-weekly, or monthly cleaning services tailored to your home's needs. We handle every room with attention to detail.</p>
             </div>
-            <div class="service-card">
+            <div class="service-item">
                 <h3>Commercial Cleaning</h3>
-                <p>Professional office and retail space cleaning with flexible scheduling to minimize disruption. We create clean, productive work environments.</p>
+                <p>Professional office and retail space cleaning on your schedule. We work around your business hours to minimize disruption.</p>
             </div>
-            <div class="service-card">
+            <div class="service-item">
                 <h3>Deep Cleaning</h3>
-                <p>Intensive cleaning service that tackles hard-to-reach areas and built-up grime. Perfect for seasonal refresh or moving preparation.</p>
+                <p>Intensive cleaning that reaches every corner. Perfect for seasonal refreshes or moving preparation.</p>
             </div>
-            <div class="service-card">
-                <h3>Window & Exterior Cleaning</h3>
-                <p>Crystal clear windows and pristine exterior surfaces. We safely clean high windows, gutters, and outdoor areas with professional equipment.</p>
+            <div class="service-item">
+                <h3>Window & Exterior</h3>
+                <p>Crystal clear windows, gutters, and exterior surfaces. We safely handle all heights with professional equipment.</p>
             </div>
-<div class="service-card">
-                <h3>Move-In/Move-Out Cleaning</h3>
-                <p>Complete property cleaning for transitions. Get your security deposit back or welcome new residents to a pristine space.</p>
+            <div class="service-item">
+                <h3>Move-In/Move-Out</h3>
+                <p>Complete property cleaning for transitions. Ensure security deposits or welcome new residents to a pristine space.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Why Choose MAID to SHINE?</h2>
-                <p>With over 15 years of experience in St. Charles, we've built our reputation on reliability, attention to detail, and customer satisfaction. Every team member is thoroughly vetted, insured, and trained to deliver exceptional results.</p>
-                <ul class="about-features">
-                    <li>Background-checked, bonded & insured staff</li>
-                    <li>Eco-friendly cleaning products</li>
-                    <li>100% satisfaction guarantee</li>
-                    <li>Flexible scheduling options</li>
-                    <li>Free estimates & consultations</li>
-                    <li>Professional & courteous service</li>
-                </ul>
-            </div>
-            <div class="about-image">🏠✨</div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"MAID to SHINE transformed our office space. Professional, reliable, and they never miss a detail. Highly recommended!"</p>
-                <div class="testimonial-author">Sarah M.</div>
-                <div class="testimonial-title">Business Owner, St. Charles</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"Finally found a cleaning service we can trust with our home. They're punctual, thorough, and treat our space with respect. Worth every penny!"</p>
-                <div class="testimonial-author">Michael D.</div>
-                <div class="testimonial-title">Homeowner, St. Charles</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-text">"The team did an amazing deep clean after our renovation. They removed all the dust and debris. Very impressed with the results!"</p>
-                <div class="testimonial-author">Jennifer R.</div>
-                <div class="testimonial-title">Homeowner, St. Charles</div>
+            <div class="service-item">
+                <h3>Post-Construction</h3>
+                <p>Professional cleanup after renovations or construction projects. We handle debris, dust, and final touches.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="contact-content">
-            <div class="contact-info-section">
-                <h2>Get in Touch</h2>
-                <ul class="contact-info">
-                    <li>
-                        <strong>Phone</strong>
-                        (123) 456-7890
-                    </li>
-                    <li>
-                        <strong>Email</strong>
-                        info@maidtoshine.com
-                    </li>
-                    <li>
-                        <strong>Service Area</strong>
-                        St. Charles, Missouri
-                    </li>
-                    <li>
-                        <strong>Hours</strong>
-                        Monday – Friday: 8am – 6pm<br>Saturday: 9am – 5pm<br>Sunday: Closed
-                    </li>
-                </ul>
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-content">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Standard Cleaning</h3>
+                    <div class="price">$149</div>
+                    <div class="price-note">For 2-3 bedroom homes</div>
+                    <ul class="features">
+                        <li>Dusting all surfaces</li>
+                        <li>Vacuuming & mopping</li>
+                        <li>Bathroom cleaning</li>
+                        <li>Kitchen cleaning</li>
+                        <li>2-3 hours</li>
+                    </ul>
+                    <button class="cta-button" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Schedule Now</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Deep Cleaning</h3>
+                    <div class="price">$299</div>
+                    <div class="price-note">For thorough refresh</div>
+                    <ul class="features">
+                        <li>Everything in Standard</li>
+                        <li>Baseboards & trim</li>
+                        <li>Window sills</li>
+                        <li>Inside appliances</li>
+                        <li>4-5 hours</li>
+                    </ul>
+                    <button class="cta-button" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Schedule Now</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Commercial</h3>
+                    <div class="price">Custom</div>
+                    <div class="price-note">Based on square footage</div>
+                    <ul class="features">
+                        <li>Flexible scheduling</li>
+                        <li>After-hours available</li>
+                        <li>Recurring service</li>
+                        <li>Custom packages</li>
+                        <li>Fully insured</li>
+                    </ul>
+                    <button class="cta-button" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'})">Get Quote</button>
+                </div>
             </div>
-            <form class="contact-form" onsubmit="handleFormSubmit(event)">
-                <h3>Free Estimate Request</h3>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section class="booking" id="booking">
+        <h2 class="section-title">Book Your Cleaning</h2>
+        <div class="booking-container">
+            <div class="booking-info">
+                <h2>Ready to get your space cleaned?</h2>
+                <p>Schedule your cleaning appointment online or call us directly. We'll confirm your booking within 24 hours. Our team is background-checked, insured, and ready to make your space shine.</p>
+                <div class="contact-details">
+                    <div>
+                        <span class="contact-label">Phone</span>
+                        <span class="contact-info">(123) 456-7890</span>
+                    </div>
+                    <div>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-info">info@maidtoshine.com</span>
+                    </div>
+                    <div>
+                        <span class="contact-label">Service Area</span>
+                        <span class="contact-info">St. Charles, Missouri</span>
+                    </div>
+                    <div>
+                        <span class="contact-label">Hours</span>
+                        <span class="contact-info">Mon-Fri: 8am-6pm<br>Sat: 9am-5pm<br>Sun: Closed</span>
+                    </div>
+                </div>
+            </div>
+            <form class="booking-form" onsubmit="handleSubmit(event)">
+                <h3>Schedule Your Appointment</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" required>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <label>Service Type</label>
+                    <select required>
+                        <option>Select a service</option>
+                        <option>Residential Cleaning</option>
+                        <option>Commercial Cleaning</option>
+                        <option>Deep Cleaning</option>
+                        <option>Window & Exterior</option>
+                        <option>Move-In/Move-Out</option>
+                        <option>Post-Construction</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <label>Preferred Date</label>
+                    <input type="date" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Tell us about your cleaning needs</label>
-                    <textarea id="message" name="message" required></textarea>
+                    <label>Additional Details</label>
+                    <textarea placeholder="Tell us about your space and any special requests..."></textarea>
                 </div>
-                <button type="submit" class="submit-button">Request Free Quote</button>
+                <button type="submit" class="submit-btn">Request Booking</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 MAID to SHINE. All rights reserved. Professional Cleaning Services in St. Charles, Missouri.</p>
+    <footer id="contact">
+        <p>&copy; 2026 MAID to SHINE. Professional Cleaning Services in St. Charles, Missouri.</p>
+        <p>Licensed | Insured | Background Checked</p>
     </footer>
 
     <script>
-        function handleFormSubmit(event) {
+        function handleSubmit(event) {
             event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
+            const form = event.target;
+            const formData = new FormData(form);
 
-            const mailtoLink = `mailto:info@maidtoshine.com?subject=Free Estimate Request from ${encodeURIComponent(name)}&body=Name: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0A%0CMessage:%0A${encodeURIComponent(message)}`;
+            const firstName = form.querySelector('input[type="text"]').value;
+            const email = form.querySelectorAll('input[type="email"]')[0].value;
+            const phone = form.querySelector('input[type="tel"]').value;
+            const serviceType = form.querySelector('select').value;
+            const date = form.querySelector('input[type="date"]').value;
+            const details = form.querySelector('textarea').value;
+
+            const mailtoLink = `mailto:info@maidtoshine.com?subject=Cleaning Booking Request from ${firstName}&body=Name: ${firstName}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${serviceType}%0APreferred Date: ${date}%0A%0ADetails:%0A${details}`;
 
             window.location.href = mailtoLink;
-
-            // Reset form
-            event.target.reset();
+            form.reset();
         }
     </script>
 </body>
